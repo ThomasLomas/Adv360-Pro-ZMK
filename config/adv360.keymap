@@ -86,15 +86,7 @@
     macros {
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        combo_shift_pg_up_down {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <46 53>;
-            layers = <0>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
