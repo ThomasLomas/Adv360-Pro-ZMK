@@ -13,14 +13,20 @@
         macro_git_add_all: git_add_all {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp G &kp I &kp T &kp SPACE &kp A &kp D &kp D &kp SPACE &kp MINUS &kp LS(A) &kp RETURN>;
+            bindings =
+                <&macro_tap>,
+                <&none &kp G &kp I &kp T &kp SPACE &kp A &kp D &kp D &kp SPACE &kp MINUS &kp LS(A) &kp RETURN>;
+
             label = "GIT_ADD_ALL";
         };
 
         macro_git_commit_msg: git_commit_msg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp SQT &kp SQT &kp LEFT_ARROW>;
+            bindings =
+                <&macro_tap>,
+                <&none &kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp SQT &kp SQT &kp LEFT_ARROW>;
+
             label = "GIT_COMMIT_MSG";
         };
 
@@ -41,14 +47,18 @@
         macro_imatmm: imatmm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(I) &kp LS(M) &kp LS(A) &kp LS(T) &kp LS(M) &kp LS(M) &kp MINUS>;
+            bindings =
+                <&macro_tap>,
+                <&kp LS(I) &kp LS(M) &kp LS(A) &kp LS(T) &kp LS(M) &kp LS(M) &kp MINUS>;
+
             label = "IMATMM";
         };
 
         macro_strict_not: strict_not {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EXCL &kp EQUAL &kp EQUAL>;
+            bindings = <&macro_tap>, <&kp EXCL &kp EQUAL &kp EQUAL>;
+
             label = "STRICT_NOT";
         };
 
