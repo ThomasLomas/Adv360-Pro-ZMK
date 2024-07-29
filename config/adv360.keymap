@@ -34,11 +34,11 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LCTRL &kp LEFT_SHIFT>,
+                <&kp LG(LCTRL) &kp LEFT_SHIFT>,
                 <&macro_tap>,
                 <&kp S>,
                 <&macro_release>,
-                <&kp LCTRL &kp LEFT_SHIFT>;
+                <&kp LG(LCTRL) &kp LEFT_SHIFT>;
 
             label = "NEW_SCREENSHOT";
         };
