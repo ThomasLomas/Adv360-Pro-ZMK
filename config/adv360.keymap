@@ -38,18 +38,18 @@
             label = "NEW_SCREENSHOT";
         };
 
-        macro_imatmm: macro_imatmm {
+        macro_imatmm: imatmm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(I) &kp LS(M) &kp LS(A) &kp LS(T) &kp LS(M) &kp LS(M) &kp MINUS>;
-            label = "MACRO_IMATMM";
+            label = "IMATMM";
         };
 
-        macro_strict_not: macro_strict_not {
+        macro_strict_not: strict_not {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp EXCL &kp EQUAL &kp EQUAL>;
-            label = "MACRO_STRICT_NOT";
+            label = "STRICT_NOT";
         };
 
         #endif
