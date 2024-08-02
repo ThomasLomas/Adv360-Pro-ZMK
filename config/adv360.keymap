@@ -14,7 +14,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&none &kp G &kp I &kp T &kp SPACE &kp A &kp D &kp D &kp SPACE &kp MINUS &kp LS(A) &kp RETURN>;
+                <&kp G &kp I &kp T &kp SPACE &kp A &kp D &kp D &kp SPACE &kp MINUS &kp LS(A) &kp RETURN>;
 
             label = "GIT_ADD_ALL";
         };
@@ -24,7 +24,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&none &kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp SQT &kp SQT &kp LEFT_ARROW>;
+                <&kp G &kp I &kp T &kp SPACE &kp C &kp O &kp M &kp M &kp I &kp T &kp SPACE &kp MINUS &kp M &kp SPACE &kp SQT &kp SQT &kp LEFT_ARROW>;
 
             label = "GIT_COMMIT_MSG";
         };
@@ -70,6 +70,16 @@
             label = "macro_version";
         };
 
+        macro_git_push: git_push {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp G &kp I &kp T &kp SPACE &kp P &kp U &kp S &kp H>;
+
+            label = "GIT_PUSH";
+        };
+
         #endif
 
         hm: homerow_mods {
@@ -96,8 +106,8 @@
 &kp EQUAL  &kp N1   &kp N2    &kp N3    &kp N4     &kp N5  &macro_imatmm                                                                  &mo 3              &kp N6  &kp N7  &kp N8     &kp N9                 &kp N0             &tog 1
 &kp MINUS  &kp Q    &kp W     &kp E     &kp R      &kp T   &macro_git_add_all                                                             &kp LEFT_BRACKET   &kp Y   &kp U   &kp I      &kp O                  &kp P              &kp BSLH
 &kp TAB    &kp A    &kp S     &kp D     &kp F      &kp G   &macro_git_commit_msg  &kp GRAVE      &kp LALT        &kp LEFT_GUI  &kp RCTRL  &kp RIGHT_BRACKET  &kp H   &kp J   &kp K      &kp L                  &kp SEMI           &kp SQT
-&kp LSHFT  &kp Z    &kp X     &kp C     &kp V      &kp B                                         &kp HOME        &kp PAGE_UP                                 &kp N   &kp M   &kp COMMA  &kp DOT                &kp FSLH           &kp RSHFT
-&mo 2      &kp END  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC               &hm LCTRL ESC  &kp DELETE      &kp EQUAL     &kp ENTER  &kp SPACE                  &kp UP  &kp DOWN   &macro_new_screenshot  &macro_strict_not  &mo 2
+&kp LSHFT  &kp Z    &kp X     &kp C     &kp V      &kp B                                         &kp DELETE      &kp PAGE_UP                                 &kp N   &kp M   &kp COMMA  &kp DOT                &kp FSLH           &kp RSHFT
+&mo 2      &kp END  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC               &hm LCTRL ESC  &kp MINUS       &kp EQUAL     &kp ENTER  &kp SPACE                  &kp UP  &kp DOWN   &macro_new_screenshot  &macro_strict_not  &mo 2
             >;
         };
 
@@ -113,11 +123,11 @@
 
         fn {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                                 &mo 3    &kp F7  &kp F8  &kp F9  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
-&trans  &trans  &trans  &trans  &trans  &trans  &none                                                  &none    &trans  &trans  &trans  &trans      &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &none   &trans  &trans      &trans             &trans  &none    &trans  &trans  &trans  &trans      &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &kp PAGE_DOWN                       &trans  &trans  &trans  &trans      &trans        &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &macro_strict_not  &trans  &kp TAB          &trans  &trans  &trans      &trans        &trans
+&kp F1  &kp F2    &kp F3  &kp F4  &kp F5  &kp F6  &tog 1                                                          &mo 3    &kp F7  &kp F8  &kp F9  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP
+&trans  &trans    &trans  &trans  &trans  &trans  &none                                                           &none    &trans  &trans  &trans  &trans      &trans        &trans
+&trans  &trans    &trans  &trans  &trans  &trans  &macro_git_push  &trans  &trans      &trans             &trans  &none    &trans  &trans  &trans  &trans      &trans        &trans
+&trans  &trans    &trans  &trans  &trans  &trans                           &trans      &kp PAGE_DOWN                       &trans  &trans  &trans  &trans      &trans        &trans
+&trans  &kp HOME  &trans  &trans  &trans          &trans           &trans  &trans      &macro_strict_not  &trans  &kp TAB          &trans  &trans  &trans      &trans        &trans
             >;
         };
 
