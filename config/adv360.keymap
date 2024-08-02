@@ -7,7 +7,16 @@
 / {
     behaviors {
         #include "macros.dtsi"
-      #include "version.dtsi"
+        #include "version.dtsi"
+
+        #ifndef VERSION_MACRO
+        macro_ver: macro_ver {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RET>;
+            label = "macro_version";
+        };
+        #endif
 
         macro_git_add_all: git_add_all {
             compatible = "zmk,behavior-macro";
@@ -61,15 +70,6 @@
             label = "STRICT_NOT";
         };
 
-        #ifndef VERSION_MACRO
-
-        macro_ver: macro_ver {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RET>;
-            label = "macro_version";
-        };
-
         macro_git_push: git_push {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -79,8 +79,6 @@
 
             label = "GIT_PUSH";
         };
-
-        #endif
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
