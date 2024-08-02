@@ -10,12 +10,14 @@
         #include "version.dtsi"
 
         #ifndef VERSION_MACRO
+
         macro_ver: macro_ver {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RET>;
             label = "macro_version";
         };
+
         #endif
 
         macro_git_add_all: git_add_all {
@@ -86,7 +88,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <175>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
